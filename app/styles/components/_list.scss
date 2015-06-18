@@ -1,0 +1,73 @@
+.reservoir-list {
+  border-top: 1px solid $border-gray;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.reservoir-item {
+  border-bottom: 1px solid $border-gray;
+  padding: 1.25em;
+
+  &-active {
+    $light-yellow: lighten($tribune-yellow, 38%);
+    background-color: $light-yellow;
+  }
+
+  header {
+    margin-bottom: .625em;
+
+    h3 {
+      font-size: 1.125em;
+      font-weight: 300;
+    }
+
+    p {
+      font-size: .625em;
+    }
+  }
+
+  .zoom-to-map {
+    color: $href-teal;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($href-teal, 20%);
+    }
+  }
+
+  .bar-label {
+    font-size: .75em;
+    font-weight: 800;
+    margin-bottom: 1em;
+  }
+
+  .row-bar {
+    background-color: $copywrite-gray;
+    height: 1em;
+    width: 100%;
+  }
+
+  .bar-color {
+    display: block;
+    height: 100%;
+  }
+
+  dl {
+    @include clearfix;
+    font-size: .75em;
+    margin: 0;
+
+    .stat {
+      @include gallery(6 of 12);
+    }
+
+    dt {
+      font-weight: 800;
+    }
+
+    dd {
+      color: lighten($bodytext-black, 20%);
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+}

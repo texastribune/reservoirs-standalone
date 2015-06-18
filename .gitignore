@@ -1,0 +1,7 @@
+# Node.js things
+node_modules/
+
+# Project things
+app/assets/
+.tmp/
+dist/

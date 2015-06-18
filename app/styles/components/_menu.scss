@@ -1,0 +1,84 @@
+$menu-breakpoint: 37.875em; // 606px
+
+.menu-container {
+  background-color: $menubar-gray;
+  position: relative;
+}
+
+.menu-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.menu-nav {
+  background-color: $menubar-gray;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  @include susy-media($menu-breakpoint) {
+    text-align: center;
+  }
+
+  a {
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: .875em;
+    font-weight: 500;
+    letter-spacing: .071428571em;
+    padding: .571428571em .714285714em; // 8px 10px
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+      color: $tribune-yellow;
+      text-decoration: none;
+    }
+  }
+
+  li {
+    display: inline-block;
+
+    &:last-child {
+      padding-right: 5em;
+
+      @include susy-media($menu-breakpoint) {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.menu-nav-open {
+  li {
+    border-top: 1px solid $menubar-accent-gray;
+    display: block;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.menu-button {
+  background-color: darken($menubar-gray, 10%);
+  border: 0;
+  border-left: .125em solid rgba(0, 0, 0, .2);
+  color: rgb(255, 255, 255);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .875em;
+  font-weight: 500;
+  padding: .571428571em .714285714em; // 8px 10px
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+
+  @include susy-media($menu-breakpoint) {
+    display: none;
+  }
+
+  &-icon {
+    vertical-align: -.05em;
+  }
+}

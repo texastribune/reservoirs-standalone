@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Texas Reservoirs Levels | The Texas Tribune</title>
+  <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@texastribune">
+  <meta name="twitter:creator" content="@rdmurphy">
+  <meta property="og:url" content="http://apps.texastribune.org/reservoirs/">
+  <meta property="og:title" content="Texas Reservoir Levels">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="As recently as 2011, Texas endured the most intense drought in recorded state history. But the rainfall so far in 2015 has left less than 1 percent of the state in drought conditions. Texas reservoirs are not far behind; as of Monday, they were collectively more than 83 percent full. Use our visualization to see how they compare.">
+  <meta property="og:site_name" content="The Texas Tribune">
+  <meta property="og:image" content="http://s3.amazonaws.com/static.texastribune.org/media/images/2015/06/17/Texas-Reservoir-art.jpg">
+  <meta property="fb:app_id" content="154122474650943">
+</head>
+<body>
+
+<div class="sticky-header">
+
+<header class="masthead">
+  <h2 class="header-logo">
+    <a href="http://www.texastribune.org">
+      <img class="logo" src="assets/images/trib-logo-white-500x55.png" alt="The Texas Tribune">
+    </a>
+  </h2>
+</header>
+
+<div class="menu-container">
+  <div class="menu-scroll">
+    <nav id="menu-nav" class="menu-nav">
+      <ul>
+        <li><a href="http://www.texastribune.org/">Front Page</a></li>
+        <li><a href="http://www.texastribune.org/2016/">2016 Coverage</a></li>
+        <li><a href="http://www.texastribune.org/directory/">Directory</a></li>
+        <li><a href="http://www.texastribune.org/events/">Events</a></li>
+        <li><a href="http://www.texastribune.org/subscribe/">Newsletters</a></li>
+      </ul>
+    </nav>
+  </div>
+  <button id="menu-button" class="menu-button"><span class="menu-button-icon icon-menu"></span> Menu</button>
+</div>
+
+</div>
+
+<main class="container" role="main">
+  <div id="map" class="map"></div>
+  <article class="story">
+    <header class="header">
+      <h1>Texas Reservoir Levels</h1>
+      <p class="credit">By <a href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> | June 18, 2015</p>
+      <ul class="share-cells">
+        <li><a href="https://twitter.com/intent/tweet?text=Texas Reservoir Levels&url=http://apps.texastribune.org/reservoirs/&via=texastribune&related=rdmurphy"><span class="icon icon-twitter"></span>Tweet</a></li>
+        <li><a href="https://www.facebook.com/dialog/share?app_id=154122474650943&display=popup&href=http://apps.texastribune.org/reservoirs/&redirect_uri=http://apps.texastribune.org/reservoirs/"><span class="icon icon-facebook"></span>Recommend</a></li>
+      </ul>
+    </header>
+    <div class="prose">
+      <p>As recently as 2011, Texas endured the most intense drought in recorded state history. But the rainfall so far in 2015 has left less than 1 percent of the state in drought conditions. Texas reservoirs are not far behind; as of June 15, 2015, they were collectively more than 83 percent full.</p>
+
+      <p>Using data collected from the <a href="http://www.twdb.texas.gov/">Texas Water Development Board</a>'s <a href="http://www.waterdatafortexas.org/reservoirs/statewide">Water Data for Texas</a> site, we have built a map that visualizes the current state of Texas’ reservoirs. The map auto-updates daily with new data. Each icon on the map represents an individual reservoir, color-coded based on how full it is currently.</p>
+
+      <div id="reservoir-list" class="reservoir-list"></div>
+    </div>
+    <footer class="footer">
+      <nav>
+        <ul>
+          <li class="copywrite">&copy; 2015 <a href="http://www.texastribune.org/">The Texas Tribune</a></li>
+        </ul>
+      </nav>
+      <nav class="last-nav">
+        <ul>
+          <li><a href="http://www.texastribune.org/about/">About Us</a></li>
+          <li><a href="http://www.texastribune.org/contact/">Contact Us</a></li>
+          <li><a href="http://www.texastribune.org/support-us/donors-and-members/">Who Funds Us?</a></li>
+          <li><a href="http://www.texastribune.org/terms-of-service/">Terms of Service</a></li>
+          <li><a href="http://www.texastribune.org/ethics/">Code of Ethics</a></li>
+          <li><a href="http://www.texastribune.org/privacy/">Privacy Policy</a></li>
+          <li class="donate"><a href="https://www.texastribune.org/join/">Donate</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </article>
+  <div id="legend" class="legend">
+    <h4>Current reservoir status (percent full)</h4>
+    <span class="marker-cat1"></span>
+    <span class="marker-cat2"></span>
+    <span class="marker-cat3"></span>
+    <span class="marker-cat4"></span>
+    <span class="marker-cat5"></span>
+    <ul>
+      <li>0-20%</li>
+      <li>40%</li>
+      <li>60%</li>
+      <li>80%</li>
+      <li>100%</li>
+    </ul>
+  </div>
+</main>
+
+<script src="scripts/bundle.js" async defer></script>
+</body>
+</html>

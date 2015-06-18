@@ -1,0 +1,18 @@
+.footer {
+  @include clearfix;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: .03em;
+  margin-bottom: 1.25em;
+
+  li {
+    font-size: .75em;
+    padding: .5em 0;
+    text-align: center;
+  }
+
+  .last-nav {
+    li {
+      @include gallery(6 of 12);
+    }
+  }
+}

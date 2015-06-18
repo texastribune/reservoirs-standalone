@@ -1,0 +1,21 @@
+.masthead {
+  background-color: $bodytext-black;
+  padding: .5em 0 .375em;
+  text-align: center;
+
+  h2 {
+    font-size: 1em;
+  }
+}
+
+.logo {
+  height: 1.375em;
+  vertical-align: bottom;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}

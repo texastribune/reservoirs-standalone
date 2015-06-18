@@ -1,0 +1,69 @@
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+$category1: rgb(215, 25, 28);
+$category2: rgb(253, 174, 97);
+$category3: rgb(255, 255, 191);
+$category4: rgb(171, 217, 233);
+$category5: rgb(44, 123, 182);
+
+.marker {
+  stroke: $bodytext-black;
+
+  &-cat1 {
+    background-color: $category1;
+    fill: $category1;
+  }
+
+  &-cat2 {
+    background-color: $category2;
+    fill: $category2;
+  }
+
+  &-cat3 {
+    background-color: $category3;
+    fill: $category3;
+  }
+
+  &-cat4 {
+    background-color: $category4;
+    fill: $category4;
+  }
+
+  &-cat5 {
+    background-color: $category5;
+    fill: $category5;
+  }
+}
+
+.legend {
+  background-color: rgba(255, 255, 255, .9);
+  bottom: 2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 1em;
+  position: absolute;
+  right: 1.25em;
+
+  h4 {
+    font-size: .875em;
+    font-weight: 300;
+    margin-bottom: .357142857em;
+  }
+
+  span {
+    height: 20px;
+    margin-bottom: .25em;
+  }
+
+  li,
+  span {
+    display: block;
+    float: left;
+    font-size: .625em;
+    letter-spacing: .03em;
+    text-align: center;
+    width: 20%;
+  }
+}
