@@ -12,7 +12,15 @@ function determineColor(n) {
 
 const formatter = format.format(',');
 
-function createReservoirDisplay(reservoir) {
+function conditionalFloodControl(name) {
+  if (name === 'Barker' || name === 'Addicks') {
+    return `<p>${name} is intended to be used as flood control, and its normal condition is empty except during flood events.</p>`;
+  }
+
+  return '';
+}
+
+export function createDisplay(reservoir) {
   let percentFull = reservoir.latest_measurement.percent_full;
   let lastUpdated = reservoir.latest_measurement.date;
   let storage = reservoir.latest_measurement.conservation_storage;
@@ -20,8 +28,8 @@ function createReservoirDisplay(reservoir) {
 
   let output = `<div id="${reservoir.condensed_name}" class="reservoir-item">
     <header>
-      <h3>${reservoir.name} <span class="icon-map-marker zoom-to-map" data-lat="${reservoir.coords[0]}" data-lon="${reservoir.coords[1]}"></span></h3>
-      <p>Last updated ${moment(lastUpdated).format('M/D/YYYY')}</p>
+      <h3>${reservoir.name} <span class="zoom-to-map" data-lat="${reservoir.coords[0]}" data-lon="${reservoir.coords[1]}"><span class="icon-map-marker"></span> View on map</span></h3>
+      <p>Last updated ${moment(lastUpdated).format('M/D/YYYY')}</p>${conditionalFloodControl(reservoir.condensed_name)}
     </header>
     <div class="row-bar">
       <span class="bar-color ${determineColor(percentFull)}" style="width: ${percentFull}%"></span>
@@ -42,22 +50,23 @@ function createReservoirDisplay(reservoir) {
   return output;
 }
 
-export default function(reservoirs, map) {
+export default function(reservoirs, map, status) {
   const $reservoirList = $('#reservoir-list');
 
   let output = reservoirs.reduce((prev, next) => {
-    return prev + createReservoirDisplay(next);
+    return prev + createDisplay(next);
   }, '');
 
   $reservoirList.html(output);
 
   const $mapZooms = $('.zoom-to-map');
   const $reservoirItems = $('.reservoir-item');
+  const offset = status === 'small' ? 0 : 0.05;
 
   $mapZooms.bind('click', e => {
     let clicked = $(e.target);
 
-    map.setView([clicked.attr('data-lat'), parseFloat(clicked.attr('data-lon')) - 0.02], 12);
+    map.setView([clicked.attr('data-lat'), parseFloat(clicked.attr('data-lon')) - offset], 12);
 
     let itemParent = clicked.parent().parent().parent();
     $reservoirItems.removeClass('reservoir-item-active');

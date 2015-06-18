@@ -1,6 +1,18 @@
 .map {
-  height: 100%;
+  border-bottom: .125em solid rgba(0, 0, 0, .1);
+  height: 15.625em;
+  position: fixed;
+  top: 69px;
   width: 100%;
+
+  @include susy-media($mobile-breakpoint) {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 5.75em;
+  }
 }
 
 $category1: rgb(215, 25, 28);
@@ -39,12 +51,40 @@ $category5: rgb(44, 123, 182);
 }
 
 .legend {
-  background-color: rgba(255, 255, 255, .9);
-  bottom: 2em;
+  @include clearfix;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 1em;
-  position: absolute;
-  right: 1.25em;
+
+  &-mobile {
+    margin-bottom: 1em;
+    padding: 0 1.25em;
+
+    @include susy-media($mobile-breakpoint) {
+      display: none;
+    }
+
+    @include susy-media($mobile-breakpoint $tablet-breakpoint) {
+      display: block;
+    }
+  }
+
+  &-desktop {
+    background-color: rgba(255, 255, 255, .9);
+    bottom: 2.125em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    display: none;
+    padding: 1em;
+    position: absolute;
+    right: 1.25em;
+
+    @include susy-media($mobile-breakpoint) {
+      display: block;
+    }
+
+    @include susy-media($mobile-breakpoint $tablet-breakpoint) {
+      display: none;
+    }
+  }
+
 
   h4 {
     font-size: .875em;
@@ -53,8 +93,12 @@ $category5: rgb(44, 123, 182);
   }
 
   span {
-    height: 20px;
+    height: 10px;
     margin-bottom: .25em;
+
+    @include susy-media($mobile-breakpoint) {
+      height: 10px;
+    }
   }
 
   li,

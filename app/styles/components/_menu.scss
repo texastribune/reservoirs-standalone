@@ -34,6 +34,10 @@ $menu-breakpoint: 37.875em; // 606px
       color: $tribune-yellow;
       text-decoration: none;
     }
+
+    &.water:hover {
+      color: rgb(6, 115, 154);
+    }
   }
 
   li {

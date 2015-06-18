@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Texas Reservoirs Levels | The Texas Tribune</title>
+  <title>Texas Reservoir Levels | The Texas Tribune</title>
   <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css">
   <link rel="stylesheet" href="styles/main.css">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,40 +21,56 @@
 <body>
 
 <div class="sticky-header">
+  <header class="masthead">
+    <h2 class="header-logo">
+      <a href="http://www.texastribune.org">
+        <img class="logo" src="assets/images/trib-logo-white-500x55.png" alt="The Texas Tribune">
+      </a>
+    </h2>
+  </header>
 
-<header class="masthead">
-  <h2 class="header-logo">
-    <a href="http://www.texastribune.org">
-      <img class="logo" src="assets/images/trib-logo-white-500x55.png" alt="The Texas Tribune">
-    </a>
-  </h2>
-</header>
-
-<div class="menu-container">
-  <div class="menu-scroll">
-    <nav id="menu-nav" class="menu-nav">
-      <ul>
-        <li><a href="http://www.texastribune.org/">Front Page</a></li>
-        <li><a href="http://www.texastribune.org/2016/">2016 Coverage</a></li>
-        <li><a href="http://www.texastribune.org/directory/">Directory</a></li>
-        <li><a href="http://www.texastribune.org/events/">Events</a></li>
-        <li><a href="http://www.texastribune.org/subscribe/">Newsletters</a></li>
-      </ul>
-    </nav>
+  <div class="menu-container">
+    <div class="menu-scroll">
+      <nav id="menu-nav" class="menu-nav">
+        <ul>
+          <li><a href="http://www.texastribune.org/">Front Page</a></li>
+          <li><a href="http://www.texastribune.org/data/">Data</a></li>
+          <li><a href="http://www.texastribune.org/plus/water/" class="water">Trib+Water</a></li>
+          <li><a href="http://www.texastribune.org/events/">Events</a></li>
+          <li><a href="http://www.texastribune.org/subscribe/">Newsletters</a></li>
+        </ul>
+      </nav>
+    </div>
+    <button id="menu-button" class="menu-button"><span class="menu-button-icon icon-menu"></span> Menu</button>
   </div>
-  <button id="menu-button" class="menu-button"><span class="menu-button-icon icon-menu"></span> Menu</button>
 </div>
 
-</div>
 
-<main class="container" role="main">
+<main class="main-container" role="main">
   <div id="map" class="map"></div>
+
+
   <article class="story">
+    <div id="legend" class="legend legend-mobile">
+      <h4>Current reservoir status (percent full)</h4>
+      <span class="marker-cat1"></span>
+      <span class="marker-cat2"></span>
+      <span class="marker-cat3"></span>
+      <span class="marker-cat4"></span>
+      <span class="marker-cat5"></span>
+      <ul>
+        <li>0-20%</li>
+        <li>40%</li>
+        <li>60%</li>
+        <li>80%</li>
+        <li>100%</li>
+      </ul>
+    </div>
     <header class="header">
       <h1>Texas Reservoir Levels</h1>
       <p class="credit">By <a href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> | June 18, 2015</p>
       <ul class="share-cells">
-        <li><a href="https://twitter.com/intent/tweet?text=Texas Reservoir Levels&url=http://apps.texastribune.org/reservoirs/&via=texastribune&related=rdmurphy"><span class="icon icon-twitter"></span>Tweet</a></li>
+        <li><a href="https://twitter.com/intent/tweet?text=The current state of Texas' reservoir levels&url=http://apps.texastribune.org/reservoirs/&via=texastribune&related=rdmurphy"><span class="icon icon-twitter"></span>Tweet</a></li>
         <li><a href="https://www.facebook.com/dialog/share?app_id=154122474650943&display=popup&href=http://apps.texastribune.org/reservoirs/&redirect_uri=http://apps.texastribune.org/reservoirs/"><span class="icon icon-facebook"></span>Recommend</a></li>
       </ul>
     </header>
@@ -84,7 +100,7 @@
       </nav>
     </footer>
   </article>
-  <div id="legend" class="legend">
+  <div id="legend" class="legend legend-desktop">
     <h4>Current reservoir status (percent full)</h4>
     <span class="marker-cat1"></span>
     <span class="marker-cat2"></span>

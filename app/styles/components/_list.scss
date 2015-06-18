@@ -28,6 +28,7 @@
   .zoom-to-map {
     color: $href-teal;
     cursor: pointer;
+    font-size: .75em;
 
     &:hover {
       color: darken($href-teal, 20%);

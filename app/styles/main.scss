@@ -13,10 +13,6 @@
 @import 'components/list';
 @import 'components/footer';
 
-.container {
-  height: 100%;
-  position: fixed;
-  padding: 4.3125em 0 0;
-  top: 0;
-  width: 100%;
+.main-container {
+  padding-top: 15.625em;
 }
