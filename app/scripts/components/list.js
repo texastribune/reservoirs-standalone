@@ -26,7 +26,7 @@ export function createDisplay(reservoir) {
   let storage = reservoir.latest_measurement.conservation_storage;
   let capacity = reservoir.latest_measurement.conservation_capacity;
 
-  let output = `<div id="${reservoir.condensed_name}" class="reservoir-item">
+  let output = `<div id="${reservoir.slug}" class="reservoir-item">
     <header>
       <h3>${reservoir.name} <span class="zoom-to-map" data-lat="${reservoir.coords[0]}" data-lon="${reservoir.coords[1]}"><span class="icon-map-marker"></span> View on map</span></h3>
       <p>Last updated ${moment(lastUpdated).format('M/D/YYYY')}</p>${conditionalFloodControl(reservoir.condensed_name)}

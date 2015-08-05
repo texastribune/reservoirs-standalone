@@ -88,7 +88,7 @@ $.ready(() => {
       marker.on('mouseout', e => e.target.setStyle({weight: 1}));
 
       marker.on('click', () => {
-        let listItem = $(`#${d.condensed_name}`);
+        let listItem = $(`#${d.slug}`);
 
         let rawNode = listItem.get(0);
         if (params.status === 'small') {

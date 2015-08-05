@@ -1,5 +1,5 @@
 .story {
-  padding: 1.25em 0;
+  padding: .625em 0 1.25em;
 
   @include susy-media($mobile-breakpoint) {
     background-color: rgba(255, 255, 255, .9);
