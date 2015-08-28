@@ -46,7 +46,9 @@
     "spreadsheet/edit": "./bin/edit_spreadsheet.js",
     "assets/push": "./bin/push_assets_to_s3.sh",
     "assets/pull": "./bin/pull_assets_from_s3.sh",
-    "deploy": "./bin/deploy.sh && npm run assets/push"
+    "deploy": "./bin/deploy.sh && npm run assets/push",
+    "serve": "gulp serve",
+    "build": "gulp"
   },
   "browserify": {
     "transform": [
